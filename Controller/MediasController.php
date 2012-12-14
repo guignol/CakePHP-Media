@@ -72,7 +72,8 @@ class MediasController extends AppController{
         $this->Media->save(array(
             'ref'    => $ref,
             'ref_id' => $ref_id,
-            'file'   => $_FILES['file']
+            'file'   => $_FILES['file'],
+            'type'  => $_FILES['file']['type']
         ));
         $this->loadModel($ref);
         $d['media'] = current($this->Media->read());
